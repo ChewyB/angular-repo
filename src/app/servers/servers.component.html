@@ -1,7 +1,24 @@
+
+<hr>
+<hr>
+
+<input class = "form-control"
+        type = "text"
+        [(ngModel)]="userName">
+<p> {{userName}} </p>
+
 <button class="btn btn-primary"
-        [disabled]="!allowNewServer">
-        Add Server
+        [disabled]="userName == ''"
+        (click)="onCreateUser()">
+    Add server
 </button>
-<p [innerText]="allowNewServer"></p>
-<app-server></app-server>
-<app-server></app-server>
+
+<hr>
+<hr>
+
+<p>{{ serverCreationStatus }}</p>
+<!-- <app-server></app-server>
+<app-server></app-server> -->
+
+<hr>
+<hr>
