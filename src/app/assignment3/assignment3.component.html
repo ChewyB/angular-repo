@@ -1,0 +1,23 @@
+<hr>
+<hr>
+<div class="container">
+  <button class="btn btn-primary"
+          (click)="toggleSecretMessage($event)">Display Details</button>
+  <p>{{secretMessage}}</p>
+
+  <h3>Time Stamps</h3>
+  <div *ngFor="let timeStamp of logArray">
+    
+      
+
+    <p *ngIf="logArray.length >= 5; else fifthElem"
+       [ngStyle]="{backgroundColor: 'blue'}"
+       [ngClass]="{fifth: 'white'}">{{timeStamp}}</p>
+
+      <ng-template #fifthElem>
+          <p>{{timeStamp}}</p>
+      </ng-template>
+
+  </div>
+
+</div>
